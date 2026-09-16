@@ -1,0 +1,238 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.9446857350952976 0.3170898308309963 0.08380275109462111 1.8170237010855144
+  position -3.463994243769452 1.4809404317814465 1.571224682495151
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 1 0 0 -1.57
+}
+Pose {
+  translation 0.47173 0.7 0.008142
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 0.4
+        metalness 0
+      }
+      geometry Sphere {
+        radius 0.06
+      }
+    }
+  ]
+}
+Robot {
+  translation 0 0.15 0
+  rotation 1 0 0 -1.57
+  children [
+    DEF BODY Shape {
+      appearance PBRAppearance {
+        baseColor 1 1 0
+        roughness 1
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.2
+        radius 0.15
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 0.5235987756
+        axis 0 1 0
+        anchor 0 0.35 0.15
+      }
+      device [
+        RotationalMotor {
+          name "motor1"
+          maxVelocity 2
+        }
+        PositionSensor {
+          name "ps1"
+        }
+      ]
+      endPoint Solid {
+        translation -1.734723475976807e-18 -0.010000100000000012 0.13
+        rotation 1 2.1846680702469885e-17 2.775558441604114e-17 3.14
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 1 0.333 0
+              roughness 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.05 0.05 0.05
+            }
+          }
+          Pose {
+            translation 0 0 -0.12
+            children [
+              DEF LINK1 Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 1
+                  roughness 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.03 0.04 0.24
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -0.34906585
+              axis 0 1 0
+              anchor 0 0 -0.24
+            }
+            device [
+              RotationalMotor {
+                name "motor2"
+                maxVelocity 2
+              }
+              PositionSensor {
+                name "ps2"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0 -0.24
+              rotation 0 1 0 0
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 1 0.333 0
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry Box {
+                    size 0.05 0.05 0.05
+                  }
+                }
+                Pose {
+                  translation 0 0 -0.12
+                  children [
+                    DEF LINK2 Shape {
+                      appearance PBRAppearance {
+                        baseColor 1 0 1
+                        roughness 1
+                        metalness 0
+                      }
+                      geometry Box {
+                        size 0.03 0.04 0.24
+                      }
+                    }
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 0.7853981634
+                    axis 0 1 0
+                    anchor 0 0 -0.24
+                  }
+                  device [
+                    RotationalMotor {
+                      name "motor3"
+                      maxVelocity 2
+                    }
+                    PositionSensor {
+                      name "ps3"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.24
+                    rotation 0 1 0 0
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          baseColor 1 0.333 0
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry Box {
+                          size 0.05 0.05 0.05
+                        }
+                      }
+                      Pose {
+                        translation 0 0 -0.12
+                        children [
+                          DEF LINK3 Shape {
+                            appearance PBRAppearance {
+                              baseColor 1 0 1
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Box {
+                              size 0.03 0.04 0.24
+                            }
+                          }
+                        ]
+                      }
+                      Pose {
+                        translation 0 0 -0.24
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColor 1 0 0
+                              roughness 0.4
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.06
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                    boundingObject Shape {
+                      geometry Box {
+                        size 0.03 0.04 0.24
+                      }
+                    }
+                    physics Physics {
+                    }
+                  }
+                }
+              ]
+              boundingObject Shape {
+                geometry Box {
+                  size 0.03 0.04 0.24
+                }
+              }
+              physics Physics {
+              }
+            }
+          }
+        ]
+        boundingObject Shape {
+          geometry Box {
+            size 0.03 0.04 0.24
+          }
+        }
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject Shape {
+    geometry Cylinder {
+      height 0.2
+      radius 0.15
+    }
+  }
+  physics Physics {
+  }
+  controller "set_pose"
+}

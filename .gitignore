@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Webots per-user project state (GUI perspective etc.) — regenerated automatically
+.*.wbproj
+
+# Compiled C/C++ controllers
+*.o
+*.exe
+*.dll
+*.so
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
